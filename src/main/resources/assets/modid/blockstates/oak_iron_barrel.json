@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "normal": { "model": "modid:block/oak_iron_barrel" },
+    "facing=north,open=false": {
+      "model": "modid:block/oak_iron_barrel",
+      "y": 0
+    },
+    "facing=east,open=false": {
+      "model": "modid:block/oak_iron_barrel",
+      "y": 90
+    },
+    "facing=south,open=false": {
+      "model": "modid:block/oak_iron_barrel",
+      "y": 180
+    },
+    "facing=west,open=false": {
+      "model": "modid:block/oak_iron_barrel",
+      "y": 270
+    }
+  }
+}

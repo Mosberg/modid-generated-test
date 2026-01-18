@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "normal": { "model": "modid:block/iron_keg" },
+    "facing=north,open=false": {
+      "model": "modid:block/iron_keg",
+      "y": 0
+    },
+    "facing=east,open=false": {
+      "model": "modid:block/iron_keg",
+      "y": 90
+    },
+    "facing=south,open=false": {
+      "model": "modid:block/iron_keg",
+      "y": 180
+    },
+    "facing=west,open=false": {
+      "model": "modid:block/iron_keg",
+      "y": 270
+    }
+  }
+}
