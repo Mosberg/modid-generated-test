@@ -1,0 +1,10 @@
+{
+  "_comment": "Item Model Template - 2D Generated (Simple)",
+  "_location": "assets/namespace/models/item/example_item.json",
+  "_description": "Simple 2D item model using generated parent",
+  
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "namespace:item/example_item"
+  }
+}

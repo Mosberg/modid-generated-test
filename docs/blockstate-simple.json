@@ -1,0 +1,23 @@
+{
+  "_comment": "Block State Template - Simple Variants with Y-Axis Rotation",
+  "_location": "assets/namespace/blockstates/example_block.json",
+  "_description": "Basic block state using variants with Y-axis rotation (pre-1.21.11 compatible)",
+  
+  "variants": {
+    "facing=north": {
+      "model": "namespace:block/example_block"
+    },
+    "facing=south": {
+      "model": "namespace:block/example_block",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "namespace:block/example_block",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "namespace:block/example_block",
+      "y": 270
+    }
+  }
+}

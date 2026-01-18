@@ -1,0 +1,16 @@
+{
+  "_comment": "Block Model Template - Cube with Texture Definition",
+  "_location": "assets/namespace/models/block/example_block.json",
+  "_description": "Cube model with texture variables defined (parent inheritance)",
+  
+  "parent": "block/cube",
+  "textures": {
+    "particle": "namespace:block/example_block",
+    "bottom": "namespace:block/example_block_bottom",
+    "top": "namespace:block/example_block_top",
+    "front": "namespace:block/example_block_front",
+    "back": "namespace:block/example_block_back",
+    "left": "namespace:block/example_block_left",
+    "right": "namespace:block/example_block_right"
+  }
+}

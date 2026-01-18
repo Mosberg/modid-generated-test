@@ -1,0 +1,10 @@
+{
+  "_comment": "Item Definition Template - 1.21.4+ Component-Based",
+  "_location": "assets/namespace/items/example_sword.json",
+  "_description": "Item model definition using 1.21.4+ component system",
+  
+  "model": {
+    "type": "minecraft:model",
+    "model": "namespace:item/example_sword"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_comment": "Item Model Template - 2D Multi-Layer",
+  "_location": "assets/namespace/models/item/example_item.json",
+  "_description": "2D item model with multiple texture layers",
+  
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "namespace:item/example_item_base",
+    "layer1": "namespace:item/example_item_overlay"
+  }
+}

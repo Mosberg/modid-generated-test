@@ -1,0 +1,56 @@
+{
+  "_comment": "Block State Template - 1.21.11 with Z-Axis Rotation",
+  "_location": "assets/namespace/blockstates/example_block.json",
+  "_description": "Block state using X, Y, and Z rotations (1.21.11 feature)",
+  
+  "variants": {
+    "facing=north,power=0": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "facing=north,power=1": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 0,
+      "z": 90
+    },
+    "facing=south,power=0": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 180,
+      "z": 0
+    },
+    "facing=south,power=1": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 180,
+      "z": 90
+    },
+    "facing=east,power=0": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 90,
+      "z": 0
+    },
+    "facing=east,power=1": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 90,
+      "z": 90
+    },
+    "facing=west,power=0": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 270,
+      "z": 0
+    },
+    "facing=west,power=1": {
+      "model": "namespace:block/example_block",
+      "x": 0,
+      "y": 270,
+      "z": 90
+    }
+  }
+}

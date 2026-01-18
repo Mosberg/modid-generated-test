@@ -1,0 +1,29 @@
+{
+  "_comment": "Block Model Template - Single Rotation Axis (Old Format, Pre-1.21.11)",
+  "_location": "assets/namespace/models/block/example_block.json",
+  "_description": "Block element with single-axis rotation (axis/angle format - still supported)",
+  
+  "elements": [
+    {
+      "from": [0.8, 0, 8],
+      "to": [15.2, 16, 8],
+      "rotation": {
+        "origin": [8, 8, 8],
+        "axis": "y",
+        "angle": 45,
+        "rescale": true
+      },
+      "shade": false,
+      "faces": {
+        "north": {
+          "uv": [0, 0, 16, 16],
+          "texture": "#cross"
+        },
+        "south": {
+          "uv": [0, 0, 16, 16],
+          "texture": "#cross"
+        }
+      }
+    }
+  ]
+}

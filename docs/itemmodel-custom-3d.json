@@ -1,0 +1,53 @@
+{
+  "_comment": "Item Model Template - Custom 3D Model",
+  "_location": "assets/namespace/models/item/example_item.json",
+  "_description": "Custom 3D item model with elements (similar to block models)",
+  
+  "textures": {
+    "particle": "#main"
+  },
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 8, 12],
+      "faces": {
+        "down": {
+          "uv": [4, 4, 12, 12],
+          "texture": "#bottom"
+        },
+        "up": {
+          "uv": [4, 4, 12, 12],
+          "texture": "#top"
+        },
+        "north": {
+          "uv": [4, 0, 12, 8],
+          "texture": "#front"
+        },
+        "south": {
+          "uv": [4, 0, 12, 8],
+          "texture": "#back"
+        },
+        "west": {
+          "uv": [4, 0, 12, 8],
+          "texture": "#left"
+        },
+        "east": {
+          "uv": [4, 0, 12, 8],
+          "texture": "#right"
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 2.5, 0],
+      "scale": [0.375, 0.375, 0.375]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_comment": "Block State Template - Multi-variant with Random Models and Weight",
+  "_location": "assets/namespace/blockstates/example_block.json",
+  "_description": "Block state with multiple model variants and random selection (grass block style)",
+  
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "namespace:block/example_block"
+      },
+      {
+        "model": "namespace:block/example_block",
+        "y": 90
+      },
+      {
+        "model": "namespace:block/example_block",
+        "y": 180
+      },
+      {
+        "model": "namespace:block/example_block",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "namespace:block/example_block_snow"
+    }
+  }
+}

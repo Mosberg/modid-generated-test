@@ -1,0 +1,45 @@
+{
+  "_comment": "Block Model Template - Multi-Axis Rotation (New Format, 1.21.11+)",
+  "_location": "assets/namespace/models/block/example_block.json",
+  "_description": "Block element with multi-axis rotation (x, y, z format - 1.21.11 feature)",
+  
+  "elements": [
+    {
+      "from": [4, 0, 4],
+      "to": [12, 16, 12],
+      "rotation": {
+        "origin": [8, 8, 8],
+        "x": 22.5,
+        "y": 45.0,
+        "z": 33.75
+      },
+      "shade": true,
+      "faces": {
+        "down": {
+          "uv": [4, 4, 12, 12],
+          "texture": "#bottom"
+        },
+        "up": {
+          "uv": [4, 4, 12, 12],
+          "texture": "#top"
+        },
+        "north": {
+          "uv": [4, 0, 12, 16],
+          "texture": "#front"
+        },
+        "south": {
+          "uv": [4, 0, 12, 16],
+          "texture": "#back"
+        },
+        "west": {
+          "uv": [4, 0, 12, 16],
+          "texture": "#left"
+        },
+        "east": {
+          "uv": [4, 0, 12, 16],
+          "texture": "#right"
+        }
+      }
+    }
+  ]
+}
