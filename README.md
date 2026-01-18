@@ -17,29 +17,23 @@ modid
    │  │  └─ dk
    │  │     └─ mosberg
    │  │        └─ modid
-   │  │           ├─ mixin
-   │  │           │  └─ client
-   │  │           │     └─ ExampleClientMixin.java
-   │  │           └─ ModIdClient.java           # Main client mod class (placeholder)
+   │  │           └─ ModIdClient.java           # Main client mod class
    │  └─ resources
-   │     └─ modid.client.mixins.json
    └─ main
       ├─ java
       │  └─ dk
       │     └─ mosberg
       │        └─ modid
       │           ├─ item
-      │           │  ├─ BarrelItem.java         # Item class for barrels (placeholder)
-      │           │  ├─ BigFlaskItem.java       # Item class for big flasks (placeholder)
-      │           │  ├─ KegItem.java            # Item class for kegs (placeholder)
-      │           │  ├─ MediumFlaskItem.java    # Item class for medium flasks (placeholder)
-      │           │  └─ SmallFlaskItem.java     # Item class for small flasks (placeholder)
-      │           ├─ mixin
-      │           │  └─ ExampleMixin.java       # Example mixin class (placeholder)
-      │           ├─ ModId.java                 # Main mod class (placeholder)
+      │           │  ├─ BarrelItem.java         # Item class for barrels
+      │           │  ├─ BigFlaskItem.java       # Item class for big flasks
+      │           │  ├─ KegItem.java            # Item class for kegs
+      │           │  ├─ MediumFlaskItem.java    # Item class for medium flasks
+      │           │  └─ SmallFlaskItem.java     # Item class for small flasks
+      │           ├─ ModId.java                 # Main mod class
       │           └─ registry
-      │              ├─ ModItemGroups.java      # Item group registration (placeholder)
-      │              └─ ModItems.java           # Item registration (placeholder)
+      │              ├─ ModItemGroups.java      # Item group registration
+      │              └─ ModItems.java           # Item registration
       └─ resources
          ├─ assets
          │  └─ modid
@@ -2268,7 +2262,5 @@ modid
          │           ├─ warped_gold_barrel.png
          │           ├─ warped_iron_barrel.png
          │           └─ warped_netherite_barrel.png
-         ├─ fabric.mod.json
-         └─ modid.mixins.json
-
+         └─ fabric.mod.json
 ```
