@@ -1,24 +1,22 @@
+// src/main/java/dk/mosberg/modid/ModId.java
 package dk.mosberg.modid;
-
-import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import dk.mosberg.modid.registry.ModItemGroups;
+import dk.mosberg.modid.registry.ModItems;
+import net.fabricmc.api.ModInitializer;
 
 public class ModId implements ModInitializer {
-	public static final String MOD_ID = "modid";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+	public static final String MOD_ID = "modid";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Initialized {}", MOD_ID);
 	}
 }

@@ -1,6 +1,10 @@
+// src/main/java/dk/mosberg/modid/item/MediumFlaskItem.java
 package dk.mosberg.modid.item;
 
-public class MediumFlaskItem {
+import net.minecraft.item.Item;
 
+public class MediumFlaskItem extends Item {
+    public MediumFlaskItem(Settings settings) {
+        super(settings);
+    }
 }
-// This is a placeholder for the MediumFlaskItem class implementation.

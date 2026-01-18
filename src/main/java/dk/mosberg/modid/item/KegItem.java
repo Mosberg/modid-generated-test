@@ -1,6 +1,10 @@
+// src/main/java/dk/mosberg/modid/item/KegItem.java
 package dk.mosberg.modid.item;
 
-public class KegItem {
+import net.minecraft.item.Item;
 
+public class KegItem extends Item {
+    public KegItem(Settings settings) {
+        super(settings);
+    }
 }
-// This is a placeholder for the KegItem class implementation.

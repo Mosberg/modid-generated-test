@@ -1,6 +1,10 @@
+// src/main/java/dk/mosberg/modid/item/BarrelItem.java
 package dk.mosberg.modid.item;
 
-public class BarrelItem {
+import net.minecraft.item.Item;
 
+public class BarrelItem extends Item {
+    public BarrelItem(Settings settings) {
+        super(settings);
+    }
 }
-// This is a placeholder for the BarrelItem class implementation.
