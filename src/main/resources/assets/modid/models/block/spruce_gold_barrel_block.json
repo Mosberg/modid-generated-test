@@ -1,6 +1,6 @@
 {
   "parent": "modid:block/barrel_block",
   "textures": {
-    "all": "modid:block/spruce_gold_barrel_block"
+    "0": "modid:block/spruce_gold_barrel_block"
   }
 }

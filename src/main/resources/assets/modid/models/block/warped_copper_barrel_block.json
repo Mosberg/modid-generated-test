@@ -1,6 +1,6 @@
 {
   "parent": "modid:block/barrel_block",
   "textures": {
-    "all": "modid:block/warped_copper_barrel_block"
+    "0": "modid:block/warped_copper_barrel_block"
   }
 }
