@@ -16,6 +16,7 @@ public final class ModBlockEntities {
     public static BlockEntityType<BarrelBlockEntity> BARREL;
     public static BlockEntityType<KegBlockEntity> KEG;
 
+    @SuppressWarnings("null")
     public static void init() {
         BARREL = Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 Identifier.of(ModId.MOD_ID, "barrel"),

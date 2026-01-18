@@ -16,7 +16,6 @@ public class KegItem extends BlockItem {
         super(block, settings);
     }
 
-    @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip,
             TooltipType type) {
         ModDataComponents.FluidContent c = stack.getOrDefault(ModDataComponents.FLUID_CONTENT,

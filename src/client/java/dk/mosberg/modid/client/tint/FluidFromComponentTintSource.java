@@ -11,6 +11,7 @@ import net.minecraft.registry.Registries;
 // NOTE: Class/interface names here are Yarn-dependent in 1.21.11.
 // In Yarn, search for "TintSource" and "TintResourceTypes" and adjust imports accordingly.
 public final class FluidFromComponentTintSource /* implements TintSource */ {
+    @SuppressWarnings("null")
     public static final MapCodec<FluidFromComponentTintSource> CODEC =
             MapCodec.unit(new FluidFromComponentTintSource());
 
@@ -35,6 +36,7 @@ public final class FluidFromComponentTintSource /* implements TintSource */ {
             return 0xFFFFFFFF;
 
         // No world/pos context for items (same limitation described in the wiki).
+        @SuppressWarnings("null")
         int rgb = handler.getFluidColor(null, null, fluid.getDefaultState());
         return 0xFF000000 | (rgb & 0x00FFFFFF);
     }

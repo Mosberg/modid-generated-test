@@ -1,3 +1,4 @@
+
 package dk.mosberg.modid.block.entity;
 
 import dk.mosberg.modid.registry.ModDataComponents;
@@ -10,7 +11,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
@@ -18,6 +18,7 @@ public abstract class AbstractTankBlockEntity extends BlockEntity
         implements SidedStorageBlockEntity {
 
     protected final SingleVariantStorage<FluidVariant> tank = new SingleVariantStorage<>() {
+        @SuppressWarnings("null")
         @Override
         protected FluidVariant getBlankVariant() {
             return FluidVariant.of(Fluids.EMPTY);
@@ -46,9 +47,10 @@ public abstract class AbstractTankBlockEntity extends BlockEntity
             return true;
         }
 
+        @SuppressWarnings("null")
         @Override
-        public long insert(FluidVariant insertedVariant, long maxAmount,
-                TransactionContext transaction) {
+        public long insert(@SuppressWarnings("null") FluidVariant insertedVariant, long maxAmount,
+                @SuppressWarnings("null") TransactionContext transaction) {
             // Enforce single-fluid rule: can only contain one fluid type at a time.
             if (!isResourceBlank() && !getResource().equals(insertedVariant))
                 return 0;
@@ -63,7 +65,6 @@ public abstract class AbstractTankBlockEntity extends BlockEntity
 
     public abstract long getCapacity();
 
-    @Override
     public SingleVariantStorage<FluidVariant> getStorage(Direction side) {
         return tank;
     }
@@ -75,6 +76,7 @@ public abstract class AbstractTankBlockEntity extends BlockEntity
         return new ModDataComponents.FluidContent(id, tank.amount);
     }
 
+    @SuppressWarnings("null")
     public void fromComponent(ModDataComponents.FluidContent content) {
         if (content == null || content.isEmpty()) {
             tank.variant = FluidVariant.of(Fluids.EMPTY);
@@ -89,19 +91,16 @@ public abstract class AbstractTankBlockEntity extends BlockEntity
         markDirty();
     }
 
-    @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
-        super.writeNbt(nbt, lookup);
+    public void writeTankNbt(NbtCompound nbt) {
         ModDataComponents.FluidContent c = toComponent();
         nbt.putString("Fluid", c.fluidId().toString());
         nbt.putLong("Amount", c.amount());
     }
 
-    @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup lookup) {
-        super.readNbt(nbt, lookup);
-        Identifier id = Identifier.tryParse(nbt.getString("Fluid"));
-        long amount = nbt.getLong("Amount");
+    public void readTankNbt(NbtCompound nbt) {
+        String fluidStr = nbt.getString("Fluid").orElse("");
+        Identifier id = Identifier.tryParse(fluidStr);
+        long amount = nbt.getLong("Amount").orElse(0L);
         if (id == null) {
             fromComponent(ModDataComponents.FluidContent.EMPTY);
         } else {

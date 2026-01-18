@@ -53,11 +53,12 @@ public class KegBlock extends BlockWithEntity {
         return BlockRenderType.MODEL;
     }
 
+    @SuppressWarnings("null")
     @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer,
-            ItemStack stack) {
+    public void onPlaced(World world, BlockPos pos, BlockState state,
+            @org.jetbrains.annotations.Nullable LivingEntity placer, ItemStack stack) {
         super.onPlaced(world, pos, state, placer, stack);
-        if (world.isClient)
+        if (world.isClient())
             return;
 
         BlockEntity be = world.getBlockEntity(pos);
@@ -69,16 +70,14 @@ public class KegBlock extends BlockWithEntity {
     }
 
     @Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState,
-            boolean moved) {
-        if (!state.isOf(newState.getBlock())) {
-            BlockEntity be = world.getBlockEntity(pos);
-            if (!world.isClient && be instanceof AbstractTankBlockEntity tankBe) {
-                ItemStack drop = new ItemStack(this.asItem());
-                drop.set(ModDataComponents.FLUID_CONTENT, tankBe.toComponent());
-                Block.dropStack(world, pos, drop);
-            }
+    public void onStateReplaced(BlockState state, net.minecraft.server.world.ServerWorld world,
+            BlockPos pos, boolean moved) {
+        BlockEntity be = world.getBlockEntity(pos);
+        if (!world.isClient() && be instanceof AbstractTankBlockEntity tankBe) {
+            ItemStack drop = new ItemStack(this.asItem());
+            drop.set(ModDataComponents.FLUID_CONTENT, tankBe.toComponent());
+            Block.dropStack(world, pos, drop);
         }
-        super.onStateReplaced(state, world, pos, newState, moved);
+        super.onStateReplaced(state, world, pos, moved);
     }
 }

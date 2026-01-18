@@ -14,12 +14,10 @@ public abstract class AbstractFluidContainerItem extends Item {
 
     protected abstract long getCapacity();
 
-    @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip,
             TooltipType type) {
         ModDataComponents.FluidContent c = stack.getOrDefault(ModDataComponents.FLUID_CONTENT,
                 ModDataComponents.FluidContent.EMPTY);
-
         if (c.isEmpty()) {
             tooltip.add(Text.translatable("tooltip.modid.fluid.empty"));
         } else {
