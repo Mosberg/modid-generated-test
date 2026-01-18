@@ -1,4 +1,4 @@
-package dk.mosberg.modid;
+package dk.mosberg.modid.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

@@ -1,10 +1,14 @@
-// src/main/java/dk/mosberg/modid/item/SmallFlaskItem.java
 package dk.mosberg.modid.item;
 
-import net.minecraft.item.Item;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidConstants;
 
-public class SmallFlaskItem extends Item {
+public class SmallFlaskItem extends AbstractFluidContainerItem {
     public SmallFlaskItem(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected long getCapacity() {
+        return FluidConstants.BOTTLE;
     }
 }

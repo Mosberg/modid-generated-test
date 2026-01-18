@@ -1,4 +1,11 @@
 {
+  "itemGroup.modid.barrels": "Barrels",
+  "itemGroup.modid.bigflasks": "Big Flasks",
+  "itemGroup.modid.blocks": "Blocks",
+  "itemGroup.modid.kegs": "Kegs",
+  "itemGroup.modid.mediumflasks": "Medium Flasks",
+  "itemGroup.modid.smallflasks": "Small Flasks",
+
   "block.modid.acacia_copper_barrel_block": "Acacia Copper Barrel",
   "block.modid.acacia_copper_exposed_barrel_block": "Acacia Copper Exposed Barrel",
   "block.modid.acacia_copper_oxidized_barrel_block": "Acacia Copper Oxidized Barrel",
@@ -90,6 +97,7 @@
   "block.modid.warped_gold_barrel_block": "Warped Gold Barrel",
   "block.modid.warped_iron_barrel_block": "Warped Iron Barrel",
   "block.modid.warped_netherite_barrel_block": "Warped Netherite Barrel",
+
   "item.modid.acacia_copper_barrel": "Acacia Copper Barrel",
   "item.modid.acacia_copper_barrel_block": "Acacia Copper Barrel Block",
   "item.modid.acacia_copper_exposed_barrel": "Acacia Copper Exposed Barrel",
@@ -920,10 +928,6 @@
   "item.modid.warped_iron_barrel_block": "Warped Iron Barrel Block",
   "item.modid.warped_netherite_barrel": "Warped Netherite Barrel",
   "item.modid.warped_netherite_barrel_block": "Warped Netherite Barrel Block",
-  "itemGroup.modid.barrels": "Barrels",
-  "itemGroup.modid.bigflasks": "Big Flasks",
-  "itemGroup.modid.blocks": "Blocks",
-  "itemGroup.modid.kegs": "Kegs",
-  "itemGroup.modid.mediumflasks": "Medium Flasks",
-  "itemGroup.modid.smallflasks": "Small Flasks"
+
+  "tooltip.modid.fluid.empty": "Fluid: (empty)"
 }

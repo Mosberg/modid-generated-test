@@ -1,6 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "modid:item/small_spruce_yellow_stained_glass_flask"
+    "layer0": "modid:item/small_spruce_yellow_stained_glass_flask",
+    "layer1": "modid:item/flasks/fluid_overlay"
   }
 }

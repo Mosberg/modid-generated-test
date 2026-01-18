@@ -1,6 +1,7 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "modid:item/small_jungle_blue_stained_glass_flask"
+    "model": "modid:item/small_jungle_blue_stained_glass_flask",
+    "layer1": "modid:item/flasks/fluid_overlay"
   }
 }

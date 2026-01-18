@@ -14,7 +14,7 @@
   "environment": "*",
   "entrypoints": {
     "main": ["dk.mosberg.modid.ModId"],
-    "client": ["dk.mosberg.modid.ModIdClient"]
+    "client": ["dk.mosberg.modid.client.ModIdClient"]
   },
   "depends": {
     "fabricloader": ">=0.18.4",
