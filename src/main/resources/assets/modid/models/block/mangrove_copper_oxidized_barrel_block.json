@@ -1,7 +1,7 @@
 {
   "parent": "modid:block/barrel_block",
   "textures": {
-    "particle": "modid:block/barrel_block",
-    "0": "modid:block/mangrove_copper_oxidized_barrel_block"
+    "particle": "#all",
+    "all": "modid:block/mangrove_copper_oxidized_barrel_block"
   }
 }

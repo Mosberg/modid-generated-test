@@ -1,7 +1,7 @@
 {
   "parent": "modid:block/barrel_block",
   "textures": {
-    "particle": "modid:block/barrel_block",
-    "0": "modid:block/birch_netherite_barrel_block"
+    "particle": "#all",
+    "all": "modid:block/birch_netherite_barrel_block"
   }
 }
