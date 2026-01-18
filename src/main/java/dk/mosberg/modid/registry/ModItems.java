@@ -118,6 +118,28 @@ public final class ModItems {
                 return registered;
         }
 
+        private static void registerAllBarrels() {
+                for (String wood : WOODS) {
+                        for (String material : BARREL_MATERIALS) {
+                                String id = wood + "_" + material + "_barrel";
+                                String blockId = wood + "_" + material + "_barrel_block";
+
+                                register(id, (s) -> new BarrelItem(ModBlocks.get(blockId), s),
+                                                settingsFor(id).maxCount(1), BARRELS);
+                        }
+                }
+        }
+
+        private static void registerAllKegs() {
+                for (String material : KEG_MATERIALS) {
+                        String id = material + "_keg";
+                        String blockId = material + "_keg_block";
+
+                        register(id, (s) -> new KegItem(ModBlocks.get(blockId), s),
+                                        settingsFor(id).maxCount(1), KEGS);
+                }
+        }
+
         @FunctionalInterface
         private interface ItemFactory {
                 Item create(Item.Settings settings);

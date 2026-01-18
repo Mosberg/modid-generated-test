@@ -3,6 +3,7 @@ package dk.mosberg.modid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import dk.mosberg.modid.registry.ModBlocks;
 import dk.mosberg.modid.registry.ModItemGroups;
 import dk.mosberg.modid.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -15,6 +16,7 @@ public class ModId implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 
 		LOGGER.info("Initialized {}", MOD_ID);
