@@ -1,6 +1,7 @@
 {
   "format_version": "1.21.11",
   "credit": "Made by Mosberg with Blockbench",
+  "ambientocclusion": true,
   "display": {
     "firstperson_righthand": {
       "rotation": [0, 135, 0],
