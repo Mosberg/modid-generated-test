@@ -17,13 +17,16 @@ modid
    │  │  └─ dk
    │  │     └─ mosberg
    │  │        └─ modid
-   │  │           └─ ModIdClient.java           # Main client mod class
+   │  │           └─ ModIdClient.java
    │  └─ resources
    └─ main
       ├─ java
       │  └─ dk
       │     └─ mosberg
       │        └─ modid
+      │           ├─ block
+      │           │  ├─ BarrelBlock.java        # Block class for barrels (currently empty)
+      │           │  └─ KegBlock.java           # Block class for kegs (currently empty)
       │           ├─ item
       │           │  ├─ BarrelItem.java         # Item class for barrels
       │           │  ├─ BigFlaskItem.java       # Item class for big flasks
@@ -32,27 +35,136 @@ modid
       │           │  └─ SmallFlaskItem.java     # Item class for small flasks
       │           ├─ ModId.java                 # Main mod class
       │           └─ registry
+      │              ├─ ModBlocks.java          # Block registration (currently empty)
       │              ├─ ModItemGroups.java      # Item group registration
       │              └─ ModItems.java           # Item registration
       └─ resources
          ├─ assets
          │  └─ modid
+         │     ├─ blockstates
+         │     │  ├─ acacia_copper_barrel_block.json
+         │     │  ├─ acacia_copper_exposed_barrel_block.json
+         │     │  ├─ acacia_copper_oxidized_barrel_block.json
+         │     │  ├─ acacia_copper_weathered_barrel_block.json
+         │     │  ├─ acacia_gold_barrel_block.json
+         │     │  ├─ acacia_iron_barrel_block.json
+         │     │  ├─ acacia_netherite_barrel_block.json
+         │     │  ├─ bamboo_copper_barrel_block.json
+         │     │  ├─ bamboo_copper_exposed_barrel_block.json
+         │     │  ├─ bamboo_copper_oxidized_barrel_block.json
+         │     │  ├─ bamboo_copper_weathered_barrel_block.json
+         │     │  ├─ bamboo_gold_barrel_block.json
+         │     │  ├─ bamboo_iron_barrel_block.json
+         │     │  ├─ bamboo_netherite_barrel_block.json
+         │     │  ├─ birch_copper_barrel_block.json
+         │     │  ├─ birch_copper_exposed_barrel_block.json
+         │     │  ├─ birch_copper_oxidized_barrel_block.json
+         │     │  ├─ birch_copper_weathered_barrel_block.json
+         │     │  ├─ birch_gold_barrel_block.json
+         │     │  ├─ birch_iron_barrel_block.json
+         │     │  ├─ birch_netherite_barrel_block.json
+         │     │  ├─ cherry_copper_barrel_block.json
+         │     │  ├─ cherry_copper_exposed_barrel_block.json
+         │     │  ├─ cherry_copper_oxidized_barrel_block.json
+         │     │  ├─ cherry_copper_weathered_barrel_block.json
+         │     │  ├─ cherry_gold_barrel_block.json
+         │     │  ├─ cherry_iron_barrel_block.json
+         │     │  ├─ cherry_netherite_barrel_block.json
+         │     │  ├─ copper_exposed_keg_block.json
+         │     │  ├─ copper_keg_block.json
+         │     │  ├─ copper_oxidized_keg_block.json
+         │     │  ├─ copper_weathered_keg_block.json
+         │     │  ├─ crimson_copper_barrel_block.json
+         │     │  ├─ crimson_copper_exposed_barrel_block.json
+         │     │  ├─ crimson_copper_oxidized_barrel_block.json
+         │     │  ├─ crimson_copper_weathered_barrel_block.json
+         │     │  ├─ crimson_gold_barrel_block.json
+         │     │  ├─ crimson_iron_barrel_block.json
+         │     │  ├─ crimson_netherite_barrel_block.json
+         │     │  ├─ dark_oak_copper_barrel_block.json
+         │     │  ├─ dark_oak_copper_exposed_barrel_block.json
+         │     │  ├─ dark_oak_copper_oxidized_barrel_block.json
+         │     │  ├─ dark_oak_copper_weathered_barrel_block.json
+         │     │  ├─ dark_oak_gold_barrel_block.json
+         │     │  ├─ dark_oak_iron_barrel_block.json
+         │     │  ├─ dark_oak_netherite_barrel_block.json
+         │     │  ├─ gold_keg_block.json
+         │     │  ├─ iron_keg.json
+         │     │  ├─ iron_keg_block.json
+         │     │  ├─ jungle_copper_barrel_block.json
+         │     │  ├─ jungle_copper_exposed_barrel_block.json
+         │     │  ├─ jungle_copper_oxidized_barrel_block.json
+         │     │  ├─ jungle_copper_weathered_barrel_block.json
+         │     │  ├─ jungle_gold_barrel_block.json
+         │     │  ├─ jungle_iron_barrel_block.json
+         │     │  ├─ jungle_netherite_barrel_block.json
+         │     │  ├─ mangrove_copper_barrel_block.json
+         │     │  ├─ mangrove_copper_exposed_barrel_block.json
+         │     │  ├─ mangrove_copper_oxidized_barrel_block.json
+         │     │  ├─ mangrove_copper_weathered_barrel_block.json
+         │     │  ├─ mangrove_gold_barrel_block.json
+         │     │  ├─ mangrove_iron_barrel_block.json
+         │     │  ├─ mangrove_netherite_barrel_block.json
+         │     │  ├─ netherite_keg_block.json
+         │     │  ├─ oak_copper_barrel_block.json
+         │     │  ├─ oak_copper_exposed_barrel_block.json
+         │     │  ├─ oak_copper_oxidized_barrel_block.json
+         │     │  ├─ oak_copper_weathered_barrel_block.json
+         │     │  ├─ oak_gold_barrel_block.json
+         │     │  ├─ oak_iron_barrel.json
+         │     │  ├─ oak_iron_barrel_block.json
+         │     │  ├─ oak_netherite_barrel_block.json
+         │     │  ├─ pale_oak_copper_barrel_block.json
+         │     │  ├─ pale_oak_copper_exposed_barrel_block.json
+         │     │  ├─ pale_oak_copper_oxidized_barrel_block.json
+         │     │  ├─ pale_oak_copper_weathered_barrel_block.json
+         │     │  ├─ pale_oak_gold_barrel_block.json
+         │     │  ├─ pale_oak_iron_barrel_block.json
+         │     │  ├─ pale_oak_netherite_barrel_block.json
+         │     │  ├─ spruce_copper_barrel_block.json
+         │     │  ├─ spruce_copper_exposed_barrel_block.json
+         │     │  ├─ spruce_copper_oxidized_barrel_block.json
+         │     │  ├─ spruce_copper_weathered_barrel_block.json
+         │     │  ├─ spruce_gold_barrel_block.json
+         │     │  ├─ spruce_iron_barrel_block.json
+         │     │  ├─ spruce_netherite_barrel_block.json
+         │     │  ├─ warped_copper_barrel_block.json
+         │     │  ├─ warped_copper_exposed_barrel_block.json
+         │     │  ├─ warped_copper_oxidized_barrel_block.json
+         │     │  ├─ warped_copper_weathered_barrel_block.json
+         │     │  ├─ warped_gold_barrel_block.json
+         │     │  ├─ warped_iron_barrel_block.json
+         │     │  └─ warped_netherite_barrel_block.json
          │     ├─ icon.png
-         │     ├─ items                         # Item model JSON files
+         │     ├─ items
          │     │  ├─ acacia_copper_barrel.json
+         │     │  ├─ acacia_copper_barrel_block.json
          │     │  ├─ acacia_copper_exposed_barrel.json
+         │     │  ├─ acacia_copper_exposed_barrel_block.json
          │     │  ├─ acacia_copper_oxidized_barrel.json
+         │     │  ├─ acacia_copper_oxidized_barrel_block.json
          │     │  ├─ acacia_copper_weathered_barrel.json
+         │     │  ├─ acacia_copper_weathered_barrel_block.json
          │     │  ├─ acacia_gold_barrel.json
+         │     │  ├─ acacia_gold_barrel_block.json
          │     │  ├─ acacia_iron_barrel.json
+         │     │  ├─ acacia_iron_barrel_block.json
          │     │  ├─ acacia_netherite_barrel.json
+         │     │  ├─ acacia_netherite_barrel_block.json
          │     │  ├─ bamboo_copper_barrel.json
+         │     │  ├─ bamboo_copper_barrel_block.json
          │     │  ├─ bamboo_copper_exposed_barrel.json
+         │     │  ├─ bamboo_copper_exposed_barrel_block.json
          │     │  ├─ bamboo_copper_oxidized_barrel.json
+         │     │  ├─ bamboo_copper_oxidized_barrel_block.json
          │     │  ├─ bamboo_copper_weathered_barrel.json
+         │     │  ├─ bamboo_copper_weathered_barrel_block.json
          │     │  ├─ bamboo_gold_barrel.json
+         │     │  ├─ bamboo_gold_barrel_block.json
          │     │  ├─ bamboo_iron_barrel.json
+         │     │  ├─ bamboo_iron_barrel_block.json
          │     │  ├─ bamboo_netherite_barrel.json
+         │     │  ├─ bamboo_netherite_barrel_block.json
          │     │  ├─ big_acacia_black_stained_glass_flask.json
          │     │  ├─ big_acacia_blue_stained_glass_flask.json
          │     │  ├─ big_acacia_brown_stained_glass_flask.json
@@ -270,53 +382,101 @@ modid
          │     │  ├─ big_warped_white_stained_glass_flask.json
          │     │  ├─ big_warped_yellow_stained_glass_flask.json
          │     │  ├─ birch_copper_barrel.json
+         │     │  ├─ birch_copper_barrel_block.json
          │     │  ├─ birch_copper_exposed_barrel.json
+         │     │  ├─ birch_copper_exposed_barrel_block.json
          │     │  ├─ birch_copper_oxidized_barrel.json
+         │     │  ├─ birch_copper_oxidized_barrel_block.json
          │     │  ├─ birch_copper_weathered_barrel.json
+         │     │  ├─ birch_copper_weathered_barrel_block.json
          │     │  ├─ birch_gold_barrel.json
+         │     │  ├─ birch_gold_barrel_block.json
          │     │  ├─ birch_iron_barrel.json
+         │     │  ├─ birch_iron_barrel_block.json
          │     │  ├─ birch_netherite_barrel.json
+         │     │  ├─ birch_netherite_barrel_block.json
          │     │  ├─ cherry_copper_barrel.json
+         │     │  ├─ cherry_copper_barrel_block.json
          │     │  ├─ cherry_copper_exposed_barrel.json
+         │     │  ├─ cherry_copper_exposed_barrel_block.json
          │     │  ├─ cherry_copper_oxidized_barrel.json
+         │     │  ├─ cherry_copper_oxidized_barrel_block.json
          │     │  ├─ cherry_copper_weathered_barrel.json
+         │     │  ├─ cherry_copper_weathered_barrel_block.json
          │     │  ├─ cherry_gold_barrel.json
+         │     │  ├─ cherry_gold_barrel_block.json
          │     │  ├─ cherry_iron_barrel.json
+         │     │  ├─ cherry_iron_barrel_block.json
          │     │  ├─ cherry_netherite_barrel.json
+         │     │  ├─ cherry_netherite_barrel_block.json
          │     │  ├─ copper_exposed_keg.json
+         │     │  ├─ copper_exposed_keg_block.json
          │     │  ├─ copper_keg.json
+         │     │  ├─ copper_keg_block.json
          │     │  ├─ copper_oxidized_keg.json
+         │     │  ├─ copper_oxidized_keg_block.json
          │     │  ├─ copper_weathered_keg.json
+         │     │  ├─ copper_weathered_keg_block.json
          │     │  ├─ crimson_copper_barrel.json
+         │     │  ├─ crimson_copper_barrel_block.json
          │     │  ├─ crimson_copper_exposed_barrel.json
+         │     │  ├─ crimson_copper_exposed_barrel_block.json
          │     │  ├─ crimson_copper_oxidized_barrel.json
+         │     │  ├─ crimson_copper_oxidized_barrel_block.json
          │     │  ├─ crimson_copper_weathered_barrel.json
+         │     │  ├─ crimson_copper_weathered_barrel_block.json
          │     │  ├─ crimson_gold_barrel.json
+         │     │  ├─ crimson_gold_barrel_block.json
          │     │  ├─ crimson_iron_barrel.json
+         │     │  ├─ crimson_iron_barrel_block.json
          │     │  ├─ crimson_netherite_barrel.json
+         │     │  ├─ crimson_netherite_barrel_block.json
          │     │  ├─ dark_oak_copper_barrel.json
+         │     │  ├─ dark_oak_copper_barrel_block.json
          │     │  ├─ dark_oak_copper_exposed_barrel.json
+         │     │  ├─ dark_oak_copper_exposed_barrel_block.json
          │     │  ├─ dark_oak_copper_oxidized_barrel.json
+         │     │  ├─ dark_oak_copper_oxidized_barrel_block.json
          │     │  ├─ dark_oak_copper_weathered_barrel.json
+         │     │  ├─ dark_oak_copper_weathered_barrel_block.json
          │     │  ├─ dark_oak_gold_barrel.json
+         │     │  ├─ dark_oak_gold_barrel_block.json
          │     │  ├─ dark_oak_iron_barrel.json
+         │     │  ├─ dark_oak_iron_barrel_block.json
          │     │  ├─ dark_oak_netherite_barrel.json
+         │     │  ├─ dark_oak_netherite_barrel_block.json
          │     │  ├─ gold_keg.json
+         │     │  ├─ gold_keg_block.json
          │     │  ├─ iron_keg.json
+         │     │  ├─ iron_keg_block.json
          │     │  ├─ jungle_copper_barrel.json
+         │     │  ├─ jungle_copper_barrel_block.json
          │     │  ├─ jungle_copper_exposed_barrel.json
+         │     │  ├─ jungle_copper_exposed_barrel_block.json
          │     │  ├─ jungle_copper_oxidized_barrel.json
+         │     │  ├─ jungle_copper_oxidized_barrel_block.json
          │     │  ├─ jungle_copper_weathered_barrel.json
+         │     │  ├─ jungle_copper_weathered_barrel_block.json
          │     │  ├─ jungle_gold_barrel.json
+         │     │  ├─ jungle_gold_barrel_block.json
          │     │  ├─ jungle_iron_barrel.json
+         │     │  ├─ jungle_iron_barrel_block.json
          │     │  ├─ jungle_netherite_barrel.json
+         │     │  ├─ jungle_netherite_barrel_block.json
          │     │  ├─ mangrove_copper_barrel.json
+         │     │  ├─ mangrove_copper_barrel_block.json
          │     │  ├─ mangrove_copper_exposed_barrel.json
+         │     │  ├─ mangrove_copper_exposed_barrel_block.json
          │     │  ├─ mangrove_copper_oxidized_barrel.json
+         │     │  ├─ mangrove_copper_oxidized_barrel_block.json
          │     │  ├─ mangrove_copper_weathered_barrel.json
+         │     │  ├─ mangrove_copper_weathered_barrel_block.json
          │     │  ├─ mangrove_gold_barrel.json
+         │     │  ├─ mangrove_gold_barrel_block.json
          │     │  ├─ mangrove_iron_barrel.json
+         │     │  ├─ mangrove_iron_barrel_block.json
          │     │  ├─ mangrove_netherite_barrel.json
+         │     │  ├─ mangrove_netherite_barrel_block.json
          │     │  ├─ medium_acacia_black_stained_glass_flask.json
          │     │  ├─ medium_acacia_blue_stained_glass_flask.json
          │     │  ├─ medium_acacia_brown_stained_glass_flask.json
@@ -534,20 +694,35 @@ modid
          │     │  ├─ medium_warped_white_stained_glass_flask.json
          │     │  ├─ medium_warped_yellow_stained_glass_flask.json
          │     │  ├─ netherite_keg.json
+         │     │  ├─ netherite_keg_block.json
          │     │  ├─ oak_copper_barrel.json
+         │     │  ├─ oak_copper_barrel_block.json
          │     │  ├─ oak_copper_exposed_barrel.json
+         │     │  ├─ oak_copper_exposed_barrel_block.json
          │     │  ├─ oak_copper_oxidized_barrel.json
+         │     │  ├─ oak_copper_oxidized_barrel_block.json
          │     │  ├─ oak_copper_weathered_barrel.json
+         │     │  ├─ oak_copper_weathered_barrel_block.json
          │     │  ├─ oak_gold_barrel.json
+         │     │  ├─ oak_gold_barrel_block.json
          │     │  ├─ oak_iron_barrel.json
+         │     │  ├─ oak_iron_barrel_block.json
          │     │  ├─ oak_netherite_barrel.json
+         │     │  ├─ oak_netherite_barrel_block.json
          │     │  ├─ pale_oak_copper_barrel.json
+         │     │  ├─ pale_oak_copper_barrel_block.json
          │     │  ├─ pale_oak_copper_exposed_barrel.json
+         │     │  ├─ pale_oak_copper_exposed_barrel_block.json
          │     │  ├─ pale_oak_copper_oxidized_barrel.json
+         │     │  ├─ pale_oak_copper_oxidized_barrel_block.json
          │     │  ├─ pale_oak_copper_weathered_barrel.json
+         │     │  ├─ pale_oak_copper_weathered_barrel_block.json
          │     │  ├─ pale_oak_gold_barrel.json
+         │     │  ├─ pale_oak_gold_barrel_block.json
          │     │  ├─ pale_oak_iron_barrel.json
+         │     │  ├─ pale_oak_iron_barrel_block.json
          │     │  ├─ pale_oak_netherite_barrel.json
+         │     │  ├─ pale_oak_netherite_barrel_block.json
          │     │  ├─ small_acacia_black_stained_glass_flask.json
          │     │  ├─ small_acacia_blue_stained_glass_flask.json
          │     │  ├─ small_acacia_brown_stained_glass_flask.json
@@ -765,37 +940,159 @@ modid
          │     │  ├─ small_warped_white_stained_glass_flask.json
          │     │  ├─ small_warped_yellow_stained_glass_flask.json
          │     │  ├─ spruce_copper_barrel.json
+         │     │  ├─ spruce_copper_barrel_block.json
          │     │  ├─ spruce_copper_exposed_barrel.json
+         │     │  ├─ spruce_copper_exposed_barrel_block.json
          │     │  ├─ spruce_copper_oxidized_barrel.json
+         │     │  ├─ spruce_copper_oxidized_barrel_block.json
          │     │  ├─ spruce_copper_weathered_barrel.json
+         │     │  ├─ spruce_copper_weathered_barrel_block.json
          │     │  ├─ spruce_gold_barrel.json
+         │     │  ├─ spruce_gold_barrel_block.json
          │     │  ├─ spruce_iron_barrel.json
+         │     │  ├─ spruce_iron_barrel_block.json
          │     │  ├─ spruce_netherite_barrel.json
+         │     │  ├─ spruce_netherite_barrel_block.json
          │     │  ├─ warped_copper_barrel.json
+         │     │  ├─ warped_copper_barrel_block.json
          │     │  ├─ warped_copper_exposed_barrel.json
+         │     │  ├─ warped_copper_exposed_barrel_block.json
          │     │  ├─ warped_copper_oxidized_barrel.json
+         │     │  ├─ warped_copper_oxidized_barrel_block.json
          │     │  ├─ warped_copper_weathered_barrel.json
+         │     │  ├─ warped_copper_weathered_barrel_block.json
          │     │  ├─ warped_gold_barrel.json
+         │     │  ├─ warped_gold_barrel_block.json
          │     │  ├─ warped_iron_barrel.json
-         │     │  └─ warped_netherite_barrel.json
-         │     ├─ lang                          # Language files
+         │     │  ├─ warped_iron_barrel_block.json
+         │     │  ├─ warped_netherite_barrel.json
+         │     │  └─ warped_netherite_barrel_block.json
+         │     ├─ lang
          │     │  └─ en_us.json
-         │     ├─ models                        # Item model files
+         │     ├─ models
+         │     │  ├─ block
+         │     │  │  ├─ acacia_copper_barrel_block.json
+         │     │  │  ├─ acacia_copper_exposed_barrel_block.json
+         │     │  │  ├─ acacia_copper_oxidized_barrel_block.json
+         │     │  │  ├─ acacia_copper_weathered_barrel_block.json
+         │     │  │  ├─ acacia_gold_barrel_block.json
+         │     │  │  ├─ acacia_iron_barrel_block.json
+         │     │  │  ├─ acacia_netherite_barrel_block.json
+         │     │  │  ├─ bamboo_copper_barrel_block.json
+         │     │  │  ├─ bamboo_copper_exposed_barrel_block.json
+         │     │  │  ├─ bamboo_copper_oxidized_barrel_block.json
+         │     │  │  ├─ bamboo_copper_weathered_barrel_block.json
+         │     │  │  ├─ bamboo_gold_barrel_block.json
+         │     │  │  ├─ bamboo_iron_barrel_block.json
+         │     │  │  ├─ bamboo_netherite_barrel_block.json
+         │     │  │  ├─ birch_copper_barrel_block.json
+         │     │  │  ├─ birch_copper_exposed_barrel_block.json
+         │     │  │  ├─ birch_copper_oxidized_barrel_block.json
+         │     │  │  ├─ birch_copper_weathered_barrel_block.json
+         │     │  │  ├─ birch_gold_barrel_block.json
+         │     │  │  ├─ birch_iron_barrel_block.json
+         │     │  │  ├─ birch_netherite_barrel_block.json
+         │     │  │  ├─ cherry_copper_barrel_block.json
+         │     │  │  ├─ cherry_copper_exposed_barrel_block.json
+         │     │  │  ├─ cherry_copper_oxidized_barrel_block.json
+         │     │  │  ├─ cherry_copper_weathered_barrel_block.json
+         │     │  │  ├─ cherry_gold_barrel_block.json
+         │     │  │  ├─ cherry_iron_barrel_block.json
+         │     │  │  ├─ cherry_netherite_barrel_block.json
+         │     │  │  ├─ copper_exposed_keg_block.json
+         │     │  │  ├─ copper_keg_block.json
+         │     │  │  ├─ copper_oxidized_keg_block.json
+         │     │  │  ├─ copper_weathered_keg_block.json
+         │     │  │  ├─ crimson_copper_barrel_block.json
+         │     │  │  ├─ crimson_copper_exposed_barrel_block.json
+         │     │  │  ├─ crimson_copper_oxidized_barrel_block.json
+         │     │  │  ├─ crimson_copper_weathered_barrel_block.json
+         │     │  │  ├─ crimson_gold_barrel_block.json
+         │     │  │  ├─ crimson_iron_barrel_block.json
+         │     │  │  ├─ crimson_netherite_barrel_block.json
+         │     │  │  ├─ dark_oak_copper_barrel_block.json
+         │     │  │  ├─ dark_oak_copper_exposed_barrel_block.json
+         │     │  │  ├─ dark_oak_copper_oxidized_barrel_block.json
+         │     │  │  ├─ dark_oak_copper_weathered_barrel_block.json
+         │     │  │  ├─ dark_oak_gold_barrel_block.json
+         │     │  │  ├─ dark_oak_iron_barrel_block.json
+         │     │  │  ├─ dark_oak_netherite_barrel_block.json
+         │     │  │  ├─ gold_keg_block.json
+         │     │  │  ├─ iron_keg.json
+         │     │  │  ├─ iron_keg_block.json
+         │     │  │  ├─ jungle_copper_barrel_block.json
+         │     │  │  ├─ jungle_copper_exposed_barrel_block.json
+         │     │  │  ├─ jungle_copper_oxidized_barrel_block.json
+         │     │  │  ├─ jungle_copper_weathered_barrel_block.json
+         │     │  │  ├─ jungle_gold_barrel_block.json
+         │     │  │  ├─ jungle_iron_barrel_block.json
+         │     │  │  ├─ jungle_netherite_barrel_block.json
+         │     │  │  ├─ mangrove_copper_barrel_block.json
+         │     │  │  ├─ mangrove_copper_exposed_barrel_block.json
+         │     │  │  ├─ mangrove_copper_oxidized_barrel_block.json
+         │     │  │  ├─ mangrove_copper_weathered_barrel_block.json
+         │     │  │  ├─ mangrove_gold_barrel_block.json
+         │     │  │  ├─ mangrove_iron_barrel_block.json
+         │     │  │  ├─ mangrove_netherite_barrel_block.json
+         │     │  │  ├─ netherite_keg_block.json
+         │     │  │  ├─ oak_copper_barrel_block.json
+         │     │  │  ├─ oak_copper_exposed_barrel_block.json
+         │     │  │  ├─ oak_copper_oxidized_barrel_block.json
+         │     │  │  ├─ oak_copper_weathered_barrel_block.json
+         │     │  │  ├─ oak_gold_barrel_block.json
+         │     │  │  ├─ oak_iron_barrel.json
+         │     │  │  ├─ oak_iron_barrel_block.json
+         │     │  │  ├─ oak_netherite_barrel_block.json
+         │     │  │  ├─ pale_oak_copper_barrel_block.json
+         │     │  │  ├─ pale_oak_copper_exposed_barrel_block.json
+         │     │  │  ├─ pale_oak_copper_oxidized_barrel_block.json
+         │     │  │  ├─ pale_oak_copper_weathered_barrel_block.json
+         │     │  │  ├─ pale_oak_gold_barrel_block.json
+         │     │  │  ├─ pale_oak_iron_barrel_block.json
+         │     │  │  ├─ pale_oak_netherite_barrel_block.json
+         │     │  │  ├─ spruce_copper_barrel_block.json
+         │     │  │  ├─ spruce_copper_exposed_barrel_block.json
+         │     │  │  ├─ spruce_copper_oxidized_barrel_block.json
+         │     │  │  ├─ spruce_copper_weathered_barrel_block.json
+         │     │  │  ├─ spruce_gold_barrel_block.json
+         │     │  │  ├─ spruce_iron_barrel_block.json
+         │     │  │  ├─ spruce_netherite_barrel_block.json
+         │     │  │  ├─ warped_copper_barrel_block.json
+         │     │  │  ├─ warped_copper_exposed_barrel_block.json
+         │     │  │  ├─ warped_copper_oxidized_barrel_block.json
+         │     │  │  ├─ warped_copper_weathered_barrel_block.json
+         │     │  │  ├─ warped_gold_barrel_block.json
+         │     │  │  ├─ warped_iron_barrel_block.json
+         │     │  │  └─ warped_netherite_barrel_block.json
          │     │  └─ item
          │     │     ├─ acacia_copper_barrel.json
+         │     │     ├─ acacia_copper_barrel_block.json
          │     │     ├─ acacia_copper_exposed_barrel.json
+         │     │     ├─ acacia_copper_exposed_barrel_block.json
          │     │     ├─ acacia_copper_oxidized_barrel.json
+         │     │     ├─ acacia_copper_oxidized_barrel_block.json
          │     │     ├─ acacia_copper_weathered_barrel.json
+         │     │     ├─ acacia_copper_weathered_barrel_block.json
          │     │     ├─ acacia_gold_barrel.json
+         │     │     ├─ acacia_gold_barrel_block.json
          │     │     ├─ acacia_iron_barrel.json
+         │     │     ├─ acacia_iron_barrel_block.json
          │     │     ├─ acacia_netherite_barrel.json
+         │     │     ├─ acacia_netherite_barrel_block.json
          │     │     ├─ bamboo_copper_barrel.json
+         │     │     ├─ bamboo_copper_barrel_block.json
          │     │     ├─ bamboo_copper_exposed_barrel.json
+         │     │     ├─ bamboo_copper_exposed_barrel_block.json
          │     │     ├─ bamboo_copper_oxidized_barrel.json
+         │     │     ├─ bamboo_copper_oxidized_barrel_block.json
          │     │     ├─ bamboo_copper_weathered_barrel.json
+         │     │     ├─ bamboo_copper_weathered_barrel_block.json
          │     │     ├─ bamboo_gold_barrel.json
+         │     │     ├─ bamboo_gold_barrel_block.json
          │     │     ├─ bamboo_iron_barrel.json
+         │     │     ├─ bamboo_iron_barrel_block.json
          │     │     ├─ bamboo_netherite_barrel.json
+         │     │     ├─ bamboo_netherite_barrel_block.json
          │     │     ├─ big_acacia_black_stained_glass_flask.json
          │     │     ├─ big_acacia_blue_stained_glass_flask.json
          │     │     ├─ big_acacia_brown_stained_glass_flask.json
@@ -1013,53 +1310,101 @@ modid
          │     │     ├─ big_warped_white_stained_glass_flask.json
          │     │     ├─ big_warped_yellow_stained_glass_flask.json
          │     │     ├─ birch_copper_barrel.json
+         │     │     ├─ birch_copper_barrel_block.json
          │     │     ├─ birch_copper_exposed_barrel.json
+         │     │     ├─ birch_copper_exposed_barrel_block.json
          │     │     ├─ birch_copper_oxidized_barrel.json
+         │     │     ├─ birch_copper_oxidized_barrel_block.json
          │     │     ├─ birch_copper_weathered_barrel.json
+         │     │     ├─ birch_copper_weathered_barrel_block.json
          │     │     ├─ birch_gold_barrel.json
+         │     │     ├─ birch_gold_barrel_block.json
          │     │     ├─ birch_iron_barrel.json
+         │     │     ├─ birch_iron_barrel_block.json
          │     │     ├─ birch_netherite_barrel.json
+         │     │     ├─ birch_netherite_barrel_block.json
          │     │     ├─ cherry_copper_barrel.json
+         │     │     ├─ cherry_copper_barrel_block.json
          │     │     ├─ cherry_copper_exposed_barrel.json
+         │     │     ├─ cherry_copper_exposed_barrel_block.json
          │     │     ├─ cherry_copper_oxidized_barrel.json
+         │     │     ├─ cherry_copper_oxidized_barrel_block.json
          │     │     ├─ cherry_copper_weathered_barrel.json
+         │     │     ├─ cherry_copper_weathered_barrel_block.json
          │     │     ├─ cherry_gold_barrel.json
+         │     │     ├─ cherry_gold_barrel_block.json
          │     │     ├─ cherry_iron_barrel.json
+         │     │     ├─ cherry_iron_barrel_block.json
          │     │     ├─ cherry_netherite_barrel.json
+         │     │     ├─ cherry_netherite_barrel_block.json
          │     │     ├─ copper_exposed_keg.json
+         │     │     ├─ copper_exposed_keg_block.json
          │     │     ├─ copper_keg.json
+         │     │     ├─ copper_keg_block.json
          │     │     ├─ copper_oxidized_keg.json
+         │     │     ├─ copper_oxidized_keg_block.json
          │     │     ├─ copper_weathered_keg.json
+         │     │     ├─ copper_weathered_keg_block.json
          │     │     ├─ crimson_copper_barrel.json
+         │     │     ├─ crimson_copper_barrel_block.json
          │     │     ├─ crimson_copper_exposed_barrel.json
+         │     │     ├─ crimson_copper_exposed_barrel_block.json
          │     │     ├─ crimson_copper_oxidized_barrel.json
+         │     │     ├─ crimson_copper_oxidized_barrel_block.json
          │     │     ├─ crimson_copper_weathered_barrel.json
+         │     │     ├─ crimson_copper_weathered_barrel_block.json
          │     │     ├─ crimson_gold_barrel.json
+         │     │     ├─ crimson_gold_barrel_block.json
          │     │     ├─ crimson_iron_barrel.json
+         │     │     ├─ crimson_iron_barrel_block.json
          │     │     ├─ crimson_netherite_barrel.json
+         │     │     ├─ crimson_netherite_barrel_block.json
          │     │     ├─ dark_oak_copper_barrel.json
+         │     │     ├─ dark_oak_copper_barrel_block.json
          │     │     ├─ dark_oak_copper_exposed_barrel.json
+         │     │     ├─ dark_oak_copper_exposed_barrel_block.json
          │     │     ├─ dark_oak_copper_oxidized_barrel.json
+         │     │     ├─ dark_oak_copper_oxidized_barrel_block.json
          │     │     ├─ dark_oak_copper_weathered_barrel.json
+         │     │     ├─ dark_oak_copper_weathered_barrel_block.json
          │     │     ├─ dark_oak_gold_barrel.json
+         │     │     ├─ dark_oak_gold_barrel_block.json
          │     │     ├─ dark_oak_iron_barrel.json
+         │     │     ├─ dark_oak_iron_barrel_block.json
          │     │     ├─ dark_oak_netherite_barrel.json
+         │     │     ├─ dark_oak_netherite_barrel_block.json
          │     │     ├─ gold_keg.json
+         │     │     ├─ gold_keg_block.json
          │     │     ├─ iron_keg.json
+         │     │     ├─ iron_keg_block.json
          │     │     ├─ jungle_copper_barrel.json
+         │     │     ├─ jungle_copper_barrel_block.json
          │     │     ├─ jungle_copper_exposed_barrel.json
+         │     │     ├─ jungle_copper_exposed_barrel_block.json
          │     │     ├─ jungle_copper_oxidized_barrel.json
+         │     │     ├─ jungle_copper_oxidized_barrel_block.json
          │     │     ├─ jungle_copper_weathered_barrel.json
+         │     │     ├─ jungle_copper_weathered_barrel_block.json
          │     │     ├─ jungle_gold_barrel.json
+         │     │     ├─ jungle_gold_barrel_block.json
          │     │     ├─ jungle_iron_barrel.json
+         │     │     ├─ jungle_iron_barrel_block.json
          │     │     ├─ jungle_netherite_barrel.json
+         │     │     ├─ jungle_netherite_barrel_block.json
          │     │     ├─ mangrove_copper_barrel.json
+         │     │     ├─ mangrove_copper_barrel_block.json
          │     │     ├─ mangrove_copper_exposed_barrel.json
+         │     │     ├─ mangrove_copper_exposed_barrel_block.json
          │     │     ├─ mangrove_copper_oxidized_barrel.json
+         │     │     ├─ mangrove_copper_oxidized_barrel_block.json
          │     │     ├─ mangrove_copper_weathered_barrel.json
+         │     │     ├─ mangrove_copper_weathered_barrel_block.json
          │     │     ├─ mangrove_gold_barrel.json
+         │     │     ├─ mangrove_gold_barrel_block.json
          │     │     ├─ mangrove_iron_barrel.json
+         │     │     ├─ mangrove_iron_barrel_block.json
          │     │     ├─ mangrove_netherite_barrel.json
+         │     │     ├─ mangrove_netherite_barrel_block.json
          │     │     ├─ medium_acacia_black_stained_glass_flask.json
          │     │     ├─ medium_acacia_blue_stained_glass_flask.json
          │     │     ├─ medium_acacia_brown_stained_glass_flask.json
@@ -1277,20 +1622,35 @@ modid
          │     │     ├─ medium_warped_white_stained_glass_flask.json
          │     │     ├─ medium_warped_yellow_stained_glass_flask.json
          │     │     ├─ netherite_keg.json
+         │     │     ├─ netherite_keg_block.json
          │     │     ├─ oak_copper_barrel.json
+         │     │     ├─ oak_copper_barrel_block.json
          │     │     ├─ oak_copper_exposed_barrel.json
+         │     │     ├─ oak_copper_exposed_barrel_block.json
          │     │     ├─ oak_copper_oxidized_barrel.json
+         │     │     ├─ oak_copper_oxidized_barrel_block.json
          │     │     ├─ oak_copper_weathered_barrel.json
+         │     │     ├─ oak_copper_weathered_barrel_block.json
          │     │     ├─ oak_gold_barrel.json
+         │     │     ├─ oak_gold_barrel_block.json
          │     │     ├─ oak_iron_barrel.json
+         │     │     ├─ oak_iron_barrel_block.json
          │     │     ├─ oak_netherite_barrel.json
+         │     │     ├─ oak_netherite_barrel_block.json
          │     │     ├─ pale_oak_copper_barrel.json
+         │     │     ├─ pale_oak_copper_barrel_block.json
          │     │     ├─ pale_oak_copper_exposed_barrel.json
+         │     │     ├─ pale_oak_copper_exposed_barrel_block.json
          │     │     ├─ pale_oak_copper_oxidized_barrel.json
+         │     │     ├─ pale_oak_copper_oxidized_barrel_block.json
          │     │     ├─ pale_oak_copper_weathered_barrel.json
+         │     │     ├─ pale_oak_copper_weathered_barrel_block.json
          │     │     ├─ pale_oak_gold_barrel.json
+         │     │     ├─ pale_oak_gold_barrel_block.json
          │     │     ├─ pale_oak_iron_barrel.json
+         │     │     ├─ pale_oak_iron_barrel_block.json
          │     │     ├─ pale_oak_netherite_barrel.json
+         │     │     ├─ pale_oak_netherite_barrel_block.json
          │     │     ├─ small_acacia_black_stained_glass_flask.json
          │     │     ├─ small_acacia_blue_stained_glass_flask.json
          │     │     ├─ small_acacia_brown_stained_glass_flask.json
@@ -1508,20 +1868,126 @@ modid
          │     │     ├─ small_warped_white_stained_glass_flask.json
          │     │     ├─ small_warped_yellow_stained_glass_flask.json
          │     │     ├─ spruce_copper_barrel.json
+         │     │     ├─ spruce_copper_barrel_block.json
          │     │     ├─ spruce_copper_exposed_barrel.json
+         │     │     ├─ spruce_copper_exposed_barrel_block.json
          │     │     ├─ spruce_copper_oxidized_barrel.json
+         │     │     ├─ spruce_copper_oxidized_barrel_block.json
          │     │     ├─ spruce_copper_weathered_barrel.json
+         │     │     ├─ spruce_copper_weathered_barrel_block.json
          │     │     ├─ spruce_gold_barrel.json
+         │     │     ├─ spruce_gold_barrel_block.json
          │     │     ├─ spruce_iron_barrel.json
+         │     │     ├─ spruce_iron_barrel_block.json
          │     │     ├─ spruce_netherite_barrel.json
+         │     │     ├─ spruce_netherite_barrel_block.json
          │     │     ├─ warped_copper_barrel.json
+         │     │     ├─ warped_copper_barrel_block.json
          │     │     ├─ warped_copper_exposed_barrel.json
+         │     │     ├─ warped_copper_exposed_barrel_block.json
          │     │     ├─ warped_copper_oxidized_barrel.json
+         │     │     ├─ warped_copper_oxidized_barrel_block.json
          │     │     ├─ warped_copper_weathered_barrel.json
+         │     │     ├─ warped_copper_weathered_barrel_block.json
          │     │     ├─ warped_gold_barrel.json
+         │     │     ├─ warped_gold_barrel_block.json
          │     │     ├─ warped_iron_barrel.json
-         │     │     └─ warped_netherite_barrel.json
-         │     └─ textures                      # Texture image files
+         │     │     ├─ warped_iron_barrel_block.json
+         │     │     ├─ warped_netherite_barrel.json
+         │     │     └─ warped_netherite_barrel_block.json
+         │     └─ textures
+         │        ├─ block
+         │        │  ├─ acacia_copper_barrel_block.png
+         │        │  ├─ acacia_copper_exposed_barrel_block.png
+         │        │  ├─ acacia_copper_oxidized_barrel_block.png
+         │        │  ├─ acacia_copper_weathered_barrel_block.png
+         │        │  ├─ acacia_gold_barrel_block.png
+         │        │  ├─ acacia_iron_barrel_block.png
+         │        │  ├─ acacia_netherite_barrel_block.png
+         │        │  ├─ bamboo_copper_barrel_block.png
+         │        │  ├─ bamboo_copper_exposed_barrel_block.png
+         │        │  ├─ bamboo_copper_oxidized_barrel_block.png
+         │        │  ├─ bamboo_copper_weathered_barrel_block.png
+         │        │  ├─ bamboo_gold_barrel_block.png
+         │        │  ├─ bamboo_iron_barrel_block.png
+         │        │  ├─ bamboo_netherite_barrel_block.png
+         │        │  ├─ birch_copper_barrel_block.png
+         │        │  ├─ birch_copper_exposed_barrel_block.png
+         │        │  ├─ birch_copper_oxidized_barrel_block.png
+         │        │  ├─ birch_copper_weathered_barrel_block.png
+         │        │  ├─ birch_gold_barrel_block.png
+         │        │  ├─ birch_iron_barrel_block.png
+         │        │  ├─ birch_netherite_barrel_block.png
+         │        │  ├─ cherry_copper_barrel_block.png
+         │        │  ├─ cherry_copper_exposed_barrel_block.png
+         │        │  ├─ cherry_copper_oxidized_barrel_block.png
+         │        │  ├─ cherry_copper_weathered_barrel_block.png
+         │        │  ├─ cherry_gold_barrel_block.png
+         │        │  ├─ cherry_iron_barrel_block.png
+         │        │  ├─ cherry_netherite_barrel_block.png
+         │        │  ├─ copper_exposed_keg_block.png
+         │        │  ├─ copper_keg_block.png
+         │        │  ├─ copper_oxidized_keg_block.png
+         │        │  ├─ copper_weathered_keg_block.png
+         │        │  ├─ crimson_copper_barrel_block.png
+         │        │  ├─ crimson_copper_exposed_barrel_block.png
+         │        │  ├─ crimson_copper_oxidized_barrel_block.png
+         │        │  ├─ crimson_copper_weathered_barrel_block.png
+         │        │  ├─ crimson_gold_barrel_block.png
+         │        │  ├─ crimson_iron_barrel_block.png
+         │        │  ├─ crimson_netherite_barrel_block.png
+         │        │  ├─ dark_oak_copper_barrel_block.png
+         │        │  ├─ dark_oak_copper_exposed_barrel_block.png
+         │        │  ├─ dark_oak_copper_oxidized_barrel_block.png
+         │        │  ├─ dark_oak_copper_weathered_barrel_block.png
+         │        │  ├─ dark_oak_gold_barrel_block.png
+         │        │  ├─ dark_oak_iron_barrel_block.png
+         │        │  ├─ dark_oak_netherite_barrel_block.png
+         │        │  ├─ gold_keg_block.png
+         │        │  ├─ iron_keg_block.png
+         │        │  ├─ jungle_copper_barrel_block.png
+         │        │  ├─ jungle_copper_exposed_barrel_block.png
+         │        │  ├─ jungle_copper_oxidized_barrel_block.png
+         │        │  ├─ jungle_copper_weathered_barrel_block.png
+         │        │  ├─ jungle_gold_barrel_block.png
+         │        │  ├─ jungle_iron_barrel_block.png
+         │        │  ├─ jungle_netherite_barrel_block.png
+         │        │  ├─ mangrove_copper_barrel_block.png
+         │        │  ├─ mangrove_copper_exposed_barrel_block.png
+         │        │  ├─ mangrove_copper_oxidized_barrel_block.png
+         │        │  ├─ mangrove_copper_weathered_barrel_block.png
+         │        │  ├─ mangrove_gold_barrel_block.png
+         │        │  ├─ mangrove_iron_barrel_block.png
+         │        │  ├─ mangrove_netherite_barrel_block.png
+         │        │  ├─ netherite_keg_block.png
+         │        │  ├─ oak_copper_barrel_block.png
+         │        │  ├─ oak_copper_exposed_barrel_block.png
+         │        │  ├─ oak_copper_oxidized_barrel_block.png
+         │        │  ├─ oak_copper_weathered_barrel_block.png
+         │        │  ├─ oak_gold_barrel_block.png
+         │        │  ├─ oak_iron_barrel_block.png
+         │        │  ├─ oak_netherite_barrel_block.png
+         │        │  ├─ pale_oak_copper_barrel_block.png
+         │        │  ├─ pale_oak_copper_exposed_barrel_block.png
+         │        │  ├─ pale_oak_copper_oxidized_barrel_block.png
+         │        │  ├─ pale_oak_copper_weathered_barrel_block.png
+         │        │  ├─ pale_oak_gold_barrel_block.png
+         │        │  ├─ pale_oak_iron_barrel_block.png
+         │        │  ├─ pale_oak_netherite_barrel_block.png
+         │        │  ├─ spruce_copper_barrel_block.png
+         │        │  ├─ spruce_copper_exposed_barrel_block.png
+         │        │  ├─ spruce_copper_oxidized_barrel_block.png
+         │        │  ├─ spruce_copper_weathered_barrel_block.png
+         │        │  ├─ spruce_gold_barrel_block.png
+         │        │  ├─ spruce_iron_barrel_block.png
+         │        │  ├─ spruce_netherite_barrel_block.png
+         │        │  ├─ warped_copper_barrel_block.png
+         │        │  ├─ warped_copper_exposed_barrel_block.png
+         │        │  ├─ warped_copper_oxidized_barrel_block.png
+         │        │  ├─ warped_copper_weathered_barrel_block.png
+         │        │  ├─ warped_gold_barrel_block.png
+         │        │  ├─ warped_iron_barrel_block.png
+         │        │  └─ warped_netherite_barrel_block.png
          │        └─ item
          │           ├─ acacia_copper_barrel.png
          │           ├─ acacia_copper_exposed_barrel.png
@@ -2263,4 +2729,5 @@ modid
          │           ├─ warped_iron_barrel.png
          │           └─ warped_netherite_barrel.png
          └─ fabric.mod.json
+
 ```
