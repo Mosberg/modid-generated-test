@@ -1,6 +1,7 @@
 {
   "parent": "modid:block/keg_block",
   "textures": {
+    "particle": "modid:block/keg_block",
     "0": "modid:block/iron_keg_block"
   }
 }

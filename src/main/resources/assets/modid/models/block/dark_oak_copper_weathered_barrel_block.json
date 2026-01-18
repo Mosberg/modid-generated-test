@@ -1,6 +1,7 @@
 {
   "parent": "modid:block/barrel_block",
   "textures": {
+    "particle": "modid:block/barrel_block",
     "0": "modid:block/dark_oak_copper_weathered_barrel_block"
   }
 }
