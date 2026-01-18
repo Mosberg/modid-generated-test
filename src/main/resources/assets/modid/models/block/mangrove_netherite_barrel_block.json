@@ -1,5 +1,5 @@
 {
-  "parent": "modid:block/oak_iron_barrel_block",
+  "parent": "modid:block/barrel_block",
   "textures": {
     "all": "modid:block/mangrove_netherite_barrel_block"
   }
