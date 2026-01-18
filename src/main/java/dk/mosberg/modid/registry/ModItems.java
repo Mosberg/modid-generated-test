@@ -14,11 +14,12 @@ import dk.mosberg.modid.item.SmallFlaskItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public final class ModItems {
 
-        // Keep a predictable order for creative tabs.
         public static final Map<String, Item> ITEMS = new LinkedHashMap<>();
 
         public static final List<Item> BARRELS = new ArrayList<>();
@@ -27,7 +28,6 @@ public final class ModItems {
         public static final List<Item> MEDIUM_FLASKS = new ArrayList<>();
         public static final List<Item> BIG_FLASKS = new ArrayList<>();
 
-        // These lists match the IDs in your en_us.json naming scheme.
         private static final String[] WOODS = {"acacia", "bamboo", "birch", "cherry", "crimson",
                         "dark_oak", "jungle", "mangrove", "oak", "pale_oak", "spruce", "warped"};
 
@@ -50,35 +50,30 @@ public final class ModItems {
         }
 
         public static void registerModItems() {
-                // Class load triggers static init, which performs the registrations.
                 ModId.LOGGER.info("Registered {} items for {}", ITEMS.size(), ModId.MOD_ID);
         }
 
         public static Item get(String id) {
                 Item item = ITEMS.get(id);
-                if (item == null) {
+                if (item == null)
                         throw new IllegalArgumentException("Unknown mod item id: " + id);
-                }
                 return item;
         }
 
         private static void registerAllBarrels() {
-                Item.Settings settings = new Item.Settings().maxCount(1);
-
                 for (String wood : WOODS) {
                         for (String material : BARREL_MATERIALS) {
                                 String id = wood + "_" + material + "_barrel";
-                                register(id, new BarrelItem(settings), BARRELS);
+                                register(id, (s) -> new BarrelItem(s), settingsFor(id).maxCount(1),
+                                                BARRELS);
                         }
                 }
         }
 
         private static void registerAllKegs() {
-                Item.Settings settings = new Item.Settings().maxCount(1);
-
                 for (String material : KEG_MATERIALS) {
                         String id = material + "_keg";
-                        register(id, new KegItem(settings), KEGS);
+                        register(id, (s) -> new KegItem(s), settingsFor(id).maxCount(1), KEGS);
                 }
         }
 
@@ -89,34 +84,42 @@ public final class ModItems {
         }
 
         private static void registerFlasksForSize(String size, List<Item> out,
-                        FlaskFactory factory) {
-                Item.Settings settings = new Item.Settings().maxCount(16);
-
+                        ItemFactory factory) {
                 for (String wood : WOODS) {
-                        // Plain glass / tinted glass variants.
-                        register(size + "_" + wood + "_glass_flask", factory.create(settings), out);
-                        register(size + "_" + wood + "_tinted_glass_flask",
-                                        factory.create(settings), out);
+                        String glassId = size + "_" + wood + "_glass_flask";
+                        register(glassId, factory, settingsFor(glassId).maxCount(16), out);
 
-                        // Stained variants.
+                        String tintedId = size + "_" + wood + "_tinted_glass_flask";
+                        register(tintedId, factory, settingsFor(tintedId).maxCount(16), out);
+
                         for (String color : STAINED_COLORS) {
-                                String id = size + "_" + wood + "_" + color
+                                String stainedId = size + "_" + wood + "_" + color
                                                 + "_stained_glass_flask";
-                                register(id, factory.create(settings), out);
+                                register(stainedId, factory, settingsFor(stainedId).maxCount(16),
+                                                out);
                         }
                 }
         }
 
-        private static Item register(String id, Item item, List<Item> category) {
-                Item registered = Registry.register(Registries.ITEM,
-                                Identifier.of(ModId.MOD_ID, id), item);
+        private static Item.Settings settingsFor(String id) {
+                Identifier identifier = Identifier.of(ModId.MOD_ID, id);
+                RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, identifier);
+                return new Item.Settings().registryKey(key);
+        }
+
+        private static Item register(String id, ItemFactory factory, Item.Settings settings,
+                        List<Item> category) {
+                Identifier identifier = Identifier.of(ModId.MOD_ID, id);
+                Item item = factory.create(settings);
+                Item registered = Registry.register(Registries.ITEM, identifier, item);
+
                 ITEMS.put(id, registered);
                 category.add(registered);
                 return registered;
         }
 
         @FunctionalInterface
-        private interface FlaskFactory {
+        private interface ItemFactory {
                 Item create(Item.Settings settings);
         }
 }
